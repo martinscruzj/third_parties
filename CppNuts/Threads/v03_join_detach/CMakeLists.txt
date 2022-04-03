@@ -1,3 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 project(JoinDetach)
+find_package(Threads REQUIRED)
 add_executable(join_detach join_detach.cpp)
+target_link_libraries(join_detach PRIVATE Threads::Threads)
