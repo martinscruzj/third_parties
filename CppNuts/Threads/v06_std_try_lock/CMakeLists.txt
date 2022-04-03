@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.14)
+project(StdTryLock)
+find_package(Threads REQUIRED)
+add_executable(std_try_lock std_try_lock.cpp)
+target_link_libraries(std_try_lock PRIVATE Threads::Threads)
