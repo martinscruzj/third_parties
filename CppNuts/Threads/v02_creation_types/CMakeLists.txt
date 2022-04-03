@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.14)
+project(ThreadCreationTypes)
+find_package(Threads REQUIRED)
+add_executable(creation_types creation_types.cpp)
+target_link_libraries(creation_types PRIVATE Threads::Threads)
