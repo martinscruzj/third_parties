@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+#include <thread>
 
 typedef unsigned long long ull;
 
@@ -27,8 +28,14 @@ int main(int argc, char** argv) {
    
    auto startTime = std::chrono::high_resolution_clock::now();
 
-   findOdd(start, end);
-   findEven(start, end);
+   std::thread t1(findEven, start, end);
+   std::thread t2(findOdd, start, end);
+
+   t1.join();
+   t2.join();
+
+   //findOdd(start, end);
+   //findEven(start, end);
    
    auto stopTime = std::chrono::high_resolution_clock::now();
    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stopTime - startTime);

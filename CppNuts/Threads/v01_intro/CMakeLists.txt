@@ -1,3 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 project(Intro)
+find_package(Threads REQUIRED)
 add_executable(intro intro.cpp)
+target_link_libraries(intro PRIVATE Threads::Threads)
