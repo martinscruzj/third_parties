@@ -1,3 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 project(Mutex)
+find_package(Threads REQUIRED)
 add_executable(mutex mutex.cpp)
+target_link_libraries(mutex PRIVATE Threads::Threads)
