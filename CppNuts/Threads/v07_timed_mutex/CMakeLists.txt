@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
+project(TimedMutex)
+find_package(Threads REQUIRED)
+add_executable(timed_mutex timed_mutex.cpp)
+target_link_libraries(timed_mutex PRIVATE Threads::Threads)
